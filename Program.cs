@@ -56,7 +56,7 @@ namespace SvnPathIndependencyMeasure
 						{
 							reportCount++;
 							total = selfContainedCommits + dependentCommits;
-							Console.WriteLine($"selfContainedCommits: {selfContainedCommits}; dependentCommits: {dependentCommits}; ratio: {selfContainedCommits / (double)total:f2} ...");
+							Console.WriteLine($"Self-contained Commits: {selfContainedCommits}; Dependent Commits: {dependentCommits}; Ratio: {selfContainedCommits / (double)total:f2} ...");
 						}
 					}
 
@@ -64,7 +64,7 @@ namespace SvnPathIndependencyMeasure
 			}
 
 			total = selfContainedCommits + dependentCommits;
-			Console.WriteLine($"selfContainedCommits: {selfContainedCommits}; dependentCommits: {dependentCommits}; ratio: {selfContainedCommits / (double)total:f2}");
+			Console.WriteLine($"Self-contained Commits: {selfContainedCommits}; Dependent Commits: {dependentCommits}; Ratio: {selfContainedCommits / (double)total:f2}");
 			if (reportProgressInterval.HasValue)
 				Console.WriteLine("done");
 
