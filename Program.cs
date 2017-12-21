@@ -15,9 +15,7 @@ namespace SvnPathIndependencyMeasure
 		{
 			var targetFolder = args[args.Length - 1];
 			var svnPath = GetSvnPath(targetFolder);
-
-			//Console.WriteLine(svnPath);
-
+			
 			var stream = GetFolderLog(args, targetFolder);
 
 			int selfContainedCommits = 0;
@@ -36,7 +34,7 @@ namespace SvnPathIndependencyMeasure
 			using (XmlReader reader = XmlReader.Create(stream))
 			{
 
-				int reportCount = 0;
+				int reportCount = -1;
 				while (reader.Read())
 				{
 					if (reader.NodeType == XmlNodeType.Element && reader.Name == "logentry")
@@ -54,9 +52,9 @@ namespace SvnPathIndependencyMeasure
 						else
 							dependentCommits++;
 
-						if (reportProgressInterval.HasValue && (int)(DateTime.Now - startRunning).TotalSeconds > reportProgressInterval.Value * reportCount++)
+						if (reportProgressInterval.HasValue && (int)(DateTime.Now - startRunning).TotalSeconds > reportProgressInterval.Value * reportCount)
 						{
-
+							reportCount++;
 							total = selfContainedCommits + dependentCommits;
 							Console.WriteLine($"selfContainedCommits: {selfContainedCommits}; dependentCommits: {dependentCommits}; ratio: {selfContainedCommits / (double)total:f2} ...");
 						}
