@@ -148,7 +148,7 @@ namespace SvnPathIndependencyMeasure
 			{
 				if (p + 1 == args.Length)
 					return defaultValue;
-				else if (args[p + 1].StartsWith("-") && args[p + 1].StartsWith("--") == false)
+				else if (args[p + 1].StartsWith("--"))
 					return defaultValue;
 				else
 					return (T)Convert.ChangeType(args[p + 1], typeof(T));
