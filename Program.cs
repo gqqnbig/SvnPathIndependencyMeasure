@@ -26,7 +26,7 @@ namespace SvnPathIndependencyMeasure
 			int total;
 
 
-			var excludePattern = GetNamedOptionArgument(args, "-e", "--exclude");
+			var excludePattern = GetNamedOptionArgument(args, "--exclude", "-e");
 			Regex excludeReg = null;
 			if (excludePattern != null)
 				excludeReg = new Regex(excludePattern);
