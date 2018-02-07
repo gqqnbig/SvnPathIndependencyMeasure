@@ -177,7 +177,7 @@ namespace SvnPathIndependencyMeasure
 			var output = p.StandardOutput.ReadToEnd();
 			Regex reg = new Regex(@"(?<=Relative URL: \^).+");
 			var m = reg.Match(output);
-			return m.Value.Trim();
+			return m.Value.Trim() + "/";
 		}
 	}
 }
