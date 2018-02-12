@@ -13,6 +13,13 @@ namespace SvnPathIndependencyMeasure
 	{
 		static void Main(string[] args)
 		{
+			if (args.Contains("--help") || args.Contains("-h"))
+			{
+				Console.Write(File.ReadAllText("README.md"));
+				return;
+			}
+
+
 			var targetFolder = args[args.Length - 1];
 			var svnPath = GetSvnPath(targetFolder);
 			

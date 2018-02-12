@@ -1,6 +1,8 @@
 # SvnPathIndependencyMeasure
 
 ## 命令行参数
+### --help, -p
+显示本帮助
 
 ### --progress, -p
 接受一个可选的整数n，每隔n秒报告进度。n的默认值是10。
