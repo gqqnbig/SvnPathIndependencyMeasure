@@ -13,9 +13,12 @@ namespace SvnPathIndependencyMeasure
 	{
 		static void Main(string[] args)
 		{
-			if (args.Contains("--help") || args.Contains("-h"))
+			if (args.Length == 0 || args.Contains("--help") || args.Contains("-h"))
 			{
-				Console.Write(File.ReadAllText("README.md"));
+				if (File.Exists($"README.{System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName}.md"))
+					Console.Write(File.ReadAllText($"README.{System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName}.md"));
+				else
+					Console.Write(File.ReadAllText("README.md"));
 				return;
 			}
 
