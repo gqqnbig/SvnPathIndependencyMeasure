@@ -1,4 +1,4 @@
-# SvnPathIndependencyMeasure
+# SVN Path Independency Measure
 [中文](README.md)
 
 ## Command Line Options
