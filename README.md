@@ -1,4 +1,4 @@
-# SvnPathIndependencyMeasure
+# SVN Path Independency Measure
 [English](README.en.md)
 
 ## 命令行参数
